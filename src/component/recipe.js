@@ -6,7 +6,14 @@ class Recipe extends Component {
       const ingredients = this.props.ingredients.map((ingredient, i) => <li key={i}>{ingredient}</li>);
       const steps = this.props.steps.map((step, i) => <li key={i}>{step}</li>);
       return (
+        <>
         <div className="Recipe">
+        <button
+        className={'Button__button-edit'
+      }> Edit This Recipe </button>
+        <button
+        className={'Button__button-delete'
+      }  > Delete This Recipe </button>
           <h2 className="Recipe__title">{this.props.title}</h2>
           <h3 className="Recipe__sub-title">Ingredients</h3>
           <ul className="Recipe__ingredients">
@@ -16,7 +23,9 @@ class Recipe extends Component {
           <ol className="Recipe__steps">
             {steps}
           </ol>
+
         </div>
+      </>
       );
     }
   }
