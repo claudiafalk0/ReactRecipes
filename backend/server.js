@@ -32,9 +32,9 @@ recipeRoutes.route('/update/:id').post(function(req, res) {
         if (!recipe)
             res.status(404).send("data is not found");
         else
-            recipe.recipe_title = req.body.recipe_title;
-            recipe.recipe_ingredients = req.body.recipe_ingredients;
-            recipe.recipe_steps = req.body.recipe_steps;
+            recipe.name = req.body.name;
+            recipe.ingredients = req.body.ingredients;
+            recipe.steps = req.body.steps;
             recipe.save().then(recipe => {
                 res.json('Todo updated!');
             })
@@ -56,10 +56,10 @@ recipeRoutes.route('/add').post(function(req, res) {
     let recipe = new Recipe(req.body);
     recipe.save()
         .then(recipe => {
-            res.status(200).json({'todo': 'todo added successfully'});
+            res.status(200).json({'Recipe': 'Recipe added successfully'});
         })
         .catch(err => {
-            res.status(400).send('adding new todo failed');
+            res.status(400).send('adding new recipe failed');
         });
 });
 
