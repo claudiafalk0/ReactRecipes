@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class CreateRecipes extends Component {
     constructor(props) {
@@ -38,6 +39,15 @@ export default class CreateRecipes extends Component {
         console.log(`Name: ${this.state.name}`);
         console.log(`ingredients: ${this.state.ingredients}`);
         console.log(`steps: ${this.state.steps}`);
+
+        const newRecipe = {
+            recipe_name: this.state.name,
+            recipe_ingredients: this.state.ingredients,
+            recipe_steps: this.state.steps,
+        };
+
+        axios.post('http://localhost:4000/Recipes/add', newRecipe)
+            .then(res => console.log(res.data));
 
         this.setState({
             name: '',

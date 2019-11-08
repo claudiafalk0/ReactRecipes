@@ -63,7 +63,7 @@ recipeRoutes.route('/add').post(function(req, res) {
         });
 });
 
-app.use('/recipes', recipeRoutes);
+app.use('/Recipes', recipeRoutes);
 
 app.listen(PORT, function() {
     console.log("Server is running on Port: " + PORT);
