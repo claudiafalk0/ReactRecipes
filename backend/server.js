@@ -44,10 +44,13 @@ recipeRoutes.route('/update/:id').post(function(req, res) {
     });
 });
 
-recipeRoutes.route('/:id').get(function(req, res) {
-    let id = req.params.id;
-    Recipe.findById(id, function(err, recipe) {
-        res.json(recipe);
+recipeRoutes.route('/delete/:id').delete(function(req, res) {
+    Recipe.deleteOne({id: req.params.id}, function(err) {
+        if(err){
+            throw err
+        }else{
+            res.status(200).json({'Recipe' : 'Recipe has been added successfully'});
+        }
     });
 });
 

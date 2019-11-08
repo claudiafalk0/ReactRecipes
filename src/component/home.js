@@ -4,21 +4,32 @@ import axios from 'axios';
 
 const Recipe = props => (
     <tr>
-        <td>{props.Recipe.recipe_name}</td>
-        <td>{props.Recipe.recipe_ingredients}</td>
-        <td>{props.Recipe.recipe_steps}</td>
+        <td>{props.recipes.recipe_name}</td>
+        <td>{props.recipes.recipe_ingredients}</td>
+        <td>{props.recipes.recipe_steps}</td>
         <td>
-            <Link to={"/edit/"+props.Recipe._id}>Edit</Link>
+            <div>
+                <Link to={"/edit/"+props.recipe._id}>Edit</Link>
+            </div>
+            <Link to={"/delete/"+props.recipe._id}>Delete</Link>
         </td>
     </tr>
 )
+
 
 export default class Home extends Component {
     constructor(props){
         super(props);
         this.state = {
             recipes:[]
-        }
+        };
+        this.delete = this.delete.bind(this);
+    }
+
+    delete() {
+        axios.get('http://localhost:4000/Recipes/delete' + this.props.Recipe._id)
+        .then(console.log("Deleted"))
+        .catch(err => console.log(err))
     }
 
     componentDidMount() {
@@ -56,3 +67,4 @@ export default class Home extends Component {
         )
     }
 }
+
