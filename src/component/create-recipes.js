@@ -11,7 +11,8 @@ export default class CreateRecipes extends Component {
         this.state = {
             name: '',
             ingredients: [],
-            steps: []
+            steps: [],
+            _id: Number
         }
     }
     onChangeName(e) {
@@ -52,7 +53,8 @@ export default class CreateRecipes extends Component {
         this.setState({
             name: '',
             ingredients: [],
-            steps: []
+            steps: [],
+            _id: Number
         })
     }
     render() {

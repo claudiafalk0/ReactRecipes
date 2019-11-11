@@ -64,7 +64,7 @@ export default class EditRecipes extends Component {
         this.props.history.push('/');
     }
 
-    
+
     render() {
         return (
             <div>
