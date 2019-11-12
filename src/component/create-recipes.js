@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+
+
 export default class CreateRecipes extends Component {
     constructor(props) {
         super(props);
@@ -53,8 +55,7 @@ export default class CreateRecipes extends Component {
         this.setState({
             name: '',
             ingredients: [],
-            steps: [],
-            _id: Number
+            steps: []
         })
     }
     render() {

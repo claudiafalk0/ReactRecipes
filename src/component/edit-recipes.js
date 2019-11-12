@@ -25,6 +25,7 @@ export default class EditRecipes extends Component {
                     recipe_ingredients: response.data.recipe_ingredients,
                     recipe_steps: response.data.recipe_steps
                 })   
+                console.log(this.state);
             })
             .catch(function (error) {
                 console.log(error);
@@ -99,7 +100,7 @@ export default class EditRecipes extends Component {
                     <br />
 
                     <div className="form-group">
-                        <input type="submit" value="Update Todo" className="btn btn-primary" />
+                        <input type="submit" value="Update" className="btn btn-primary" />
                     </div>
                 </form>
             </div>
