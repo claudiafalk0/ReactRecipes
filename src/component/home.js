@@ -11,11 +11,13 @@ const Recipe = props => (
             <div>
                 <Link to={'/edit/' + props.recipe._id}>Edit</Link>
             </div>
-            <button type='onClick' id={props.recipe._id}>Delete</button>
+            <div>
+                <Link to={'/delete/' + props.recipe._id}>Delete</Link>
+            </div>
+            
         </td>
     </tr>
 )
-
 
 
 export default class Home extends Component {
@@ -24,22 +26,6 @@ export default class Home extends Component {
         this.state = {
             Recipes:[]
         };
-    }
-
-    onClick(e) {
-        e.preventDefault();
-        axios.delete(this.props.recipe._id)
-        .then(res => {
-            this.setState(previousState => {
-                return {
-                    Recipes: previousState.Recipes.filter(recipes => recipes._id !== this.props.recipe._id)
-                }
-            })
-        })
-        .catch(err => {
-            console.log(err)
-        })
-        
     }
 
     componentDidMount() {

@@ -52,6 +52,7 @@ export default class EditRecipes extends Component {
 
     onSubmit(e){
         e.preventDefault();
+
         const obj = {
             recipe_name: this.state.recipe_name,
             recipe_ingredients: this.state.recipe_ingredients,

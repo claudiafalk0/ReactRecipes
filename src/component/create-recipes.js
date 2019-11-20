@@ -38,11 +38,6 @@ export default class CreateRecipes extends Component {
     onSubmit(e){
         e.preventDefault();
 
-        console.log('Form submitted');
-        console.log(`Name: ${this.state.name}`);
-        console.log(`ingredients: ${this.state.ingredients}`);
-        console.log(`steps: ${this.state.steps}`);
-
         const newRecipe = {
             recipe_name: this.state.name,
             recipe_ingredients: this.state.ingredients,

@@ -27,16 +27,23 @@ recipeRoutes.route('/').get(function(req, res) {
     });
 });
 
+recipeRoutes.route('/:id').get(function(req, res) {
+    let id = req.params.id;
+    Recipe.findById(id, function(err, recipe){
+        res.json(recipe)
+    })
+});
+
 recipeRoutes.route('/update/:id').post(function(req, res) {
     Recipe.findById(req.params.id, function(err, recipe) {
         if (!recipe)
             res.status(404).send("data is not found");
         else
-            recipe.name = req.body.name;
-            recipe.ingredients = req.body.ingredients;
-            recipe.steps = req.body.steps;
+            recipe.recipe_name = req.body.recipe_name;
+            recipe.recipe_ingredients = req.body.recipe_ingredients;
+            recipe.recipe_steps = req.body.recipe_steps;
             recipe.save().then(recipe => {
-                res.json('Todo updated!');
+                res.json("recipe updated");
             })
             .catch(err => {
                 res.status(400).send("Update not possible");
