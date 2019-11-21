@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from "./home";
 import Edit from "./edit-recipes";
 import Create from "./create-recipes";
+// import Delete from "./delete-recipes";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
           <Route path="/" exact component={Home}/>
           <Route path="/edit/:id" component={Edit} />
           <Route path="/create" component={Create} />
+          {/* <Route path='/delete/:id' component={Delete}/> */}
         </div>
       </Router>
     );

@@ -56,7 +56,7 @@ recipeRoutes.route('/delete/:id').delete(function(req, res) {
         if(err){
             throw err
         }else{
-            res.status(200).json({'Recipe' : 'Recipe has been added successfully'});
+            res.status(200).json({'Recipe' : 'Recipe has been removed successfully'});
         }
     });
 });

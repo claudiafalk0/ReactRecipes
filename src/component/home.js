@@ -11,13 +11,14 @@ const Recipe = props => (
             <div>
                 <Link to={'/edit/' + props.recipe._id}>Edit</Link>
             </div>
-            <div>
-                <Link to={'/delete/' + props.recipe._id}>Delete</Link>
-            </div>
-            
+            <button onClick={() => 
+                    axios.delete('http://localhost:4000/Recipes/delete/' + props.recipe._id)
+                    .then((res) => console.log(res))}
+                >Delete</button>
         </td>
     </tr>
 )
+
 
 
 export default class Home extends Component {
