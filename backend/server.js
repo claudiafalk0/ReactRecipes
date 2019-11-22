@@ -52,7 +52,7 @@ recipeRoutes.route('/update/:id').post(function(req, res) {
 });
 
 recipeRoutes.route('/delete/:id').delete(function(req, res) {
-    Recipe.deleteOne({id: req.params.id}, function(err) {
+    Recipe.deleteOne({_id: req.params.id}, function(err) {
         if(err){
             throw err
         }else{

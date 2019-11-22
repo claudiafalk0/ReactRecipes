@@ -28,7 +28,6 @@ class App extends Component {
           <Route path="/" exact component={Home}/>
           <Route path="/edit/:id" component={Edit} />
           <Route path="/create" component={Create} />
-          {/* <Route path='/delete/:id' component={Delete}/> */}
         </div>
       </Router>
     );
